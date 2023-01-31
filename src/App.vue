@@ -3,6 +3,18 @@
     <h2>{{ userName }}</h2>
   </section>
 </template>
+<!-- 
+
+  *** EL MÉTODO SETUP PUEDE SER REEMPLAZADO POR ESTA FORMA ***
+<script setup>
+import { ref } from 'vue';
+ 
+const uName = ref('Maximilian');
+ 
+setTimeout(function() {
+  uName.value = 'Max';
+}, 2000);
+</script> -->
 
 <script>
 import { ref } from 'vue';
