@@ -5,46 +5,24 @@
     <h3>{{ user }}</h3>
   </section>
 </template>
-<!-- 
-
-  *** EL MÉTODO SETUP PUEDE SER REEMPLAZADO POR ESTA FORMA ***
-<script setup>
-import { ref } from 'vue';
- 
-const uName = ref('Maximilian');
- 
-setTimeout(function() {
-  uName.value = 'Max';
-}, 2000);
-</script> -->
 
 <script>
-import { ref } from 'vue';
-// ref es reactivo
+import { reactive } from 'vue';
+
 export default {
   setup() {
-    // const uName = ref('Aureliano');
-    // const uAge = ref(40);
-
-    const user = ref({
+    const user = reactive({
       name: 'Aureliano',
       age: 40,
     });
 
     setTimeout(() => {
-      // debemos usar el .value si SOLO queremos modificar el valor
-      user.value.name = 'Sr. Buendía';
-      user.value.age = 41;
+      user.name = 'Sr. Buendía';
+      user.age = 41;
     }, 3000);
 
-    return { userName: user.value.name, age: user.value.age, user: user };
+    return { user: user };
   },
-
-  // data() {
-  //   return {
-  //     userName: 'Maximilian',
-  //   };
-  // },
 };
 </script>
 
